@@ -5,8 +5,11 @@ import About from './views/About.vue';
 import Login from './views/Login.vue';
 import Register from './views/Register.vue';
 import SocialCare from './views/SocialCare.vue';
+import CORS from 'cors'
 
 Vue.use(Router);
+
+CORS(app)
 
 export default new Router({
   routes: [

@@ -1,30 +1,12 @@
 <template>
     <section>
-        <b-checkbox v-model="hasError">Show errors</b-checkbox>
 
-        <b-field label="Username"
-            :type="{ 'is-danger': hasError }"
-            :message="{ 'Username is not available': hasError }">
+        <b-field label="Username">
             <b-input value="" maxlength="30"></b-input>
         </b-field>
 
-        <b-field label="Password"
-            :type="{ 'is-danger': hasError }"
-            :message="[
-                { 'Password is too short': hasError },
-                { 'Password must have at least 8 characters': hasError }
-            ]">
+        <b-field label="Password">
             <b-input value="" type="password" maxlength="30"></b-input>
         </b-field>
     </section>
 </template>
-
-<script>
-    export default {
-        data() {
-            return {
-                hasError: true
-            }
-        }
-    }
-</script>
