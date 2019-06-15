@@ -2,15 +2,15 @@
   <div id="app">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-start">
-      <a class="navbar-item" href="https://www.nhs.uk/">
+      <a class="navbar-item" href="https://www.nhs.uk/" target="_blank">
         <img src="./assets/NHS.jpg">
       </a>
         <router-link class="navbar-item" to="/">Home</router-link>
         <router-link class="navbar-item" to="/about">About</router-link>
         <router-link class="navbar-item" to="/register">Register</router-link>
-        <router-link class="navbar-item" to="/login">Login</router-link> 
+        <router-link class="navbar-item" to="/login">Login</router-link>
         <router-link class="navbar-item" to="/socialcare">SocialCare</router-link>
-        
+
       </div>
     </nav>
     <router-view/>
