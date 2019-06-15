@@ -6,7 +6,9 @@
             <p class="control">
                 <button class="button is-info">Search</button>
             </p>
+
         </b-field>
+      
     </section>
 </template>
 
