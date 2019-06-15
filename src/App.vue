@@ -5,7 +5,9 @@
         <router-link class="navbar-item" to="/">Home</router-link>
         <router-link class="navbar-item" to="/about">About</router-link>
         <router-link class="navbar-item" to="/register">Register</router-link>
-        <router-link class="navbar-item" to="/login">Login</router-link>
+        <router-link class="navbar-item" to="/login">Login</router-link> 
+        <router-link class="navbar-item" to="/socialcare">SocialCare</router-link>
+        
       </div>
     </nav>
     <router-view/>
