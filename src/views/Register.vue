@@ -19,7 +19,7 @@
             <b-input value="" type="password" maxlength="30"></b-input>
         </b-field>
 
-        <b-field label="Repeat Password"
+        <b-field label= "Password Confirmation"
             type="is-warning"
             :message="['Password is too short', 'Password must have at least 8 characters']">
             <b-input value="" type="password" maxlength="30"></b-input>
