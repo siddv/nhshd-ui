@@ -4,6 +4,7 @@ import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Login from './views/Login.vue';
 import Register from './views/Register.vue';
+import SocialCare from './views/SocialCare.vue';
 
 Vue.use(Router);
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "about" */ './views/Login.vue'),
+    },
+    {
+      path: '/socialcare',
+      name: 'socialcare',
+      component: () => import(/* webpackChunkName: "about" */ './views/SocialCare.vue'),
     },
   ],
 });
