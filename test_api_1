@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSSample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    $(function() {
+        var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://graphnet-api-nonprod.azure-api.net/acute/patients/2188/allergies-summary?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","ce5eec7ae8704fcda524698e058ddf50");
+                xhrObj.setRequestHeader("Authorization","Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0NjM4YmIwZDAyOGU1OTliNjEzZDUzNDg5ZjZhMjI3IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NjA1OTcyMzUsImV4cCI6MTU2MDc3MDAzNSwiaXNzIjoiaHR0cHM6Ly9maGlyLWlzLmdyaGFwcC5jb20iLCJhdWQiOlsiaHR0cHM6Ly9maGlyLWlzLmdyaGFwcC5jb20vcmVzb3VyY2VzIiwidm9uayJdLCJjbGllbnRfaWQiOiJGSElSVXNlciIsInN1YiI6IlJld2lyZWRIYWNrYXRob24iLCJhdXRoX3RpbWUiOjE1NjA1OTcyMzUsImlkcCI6ImxvY2FsIiwic2NvcGUiOlsicHJvZmlsZSIsInVzZXIvKi5yZWFkIl0sImFtciI6WyJwYXNzd29yZCJdfQ.MYB1K9d2vP5nA_wgSZxf3SLsia1Z0zHpTK-c6AoFg6xgD1EvDRdD0XJuHv07s1LsqBAvTs5GbGykUeIGzYf1MSD9Encl6ZrwCxvM5hXnQ6IRLgklgfp4Y-Tp4VQnhz6WCUAP8e4GuYILpie0F-a_IHjFseIOBFDD7fztkOK55KIqdpag5t8nTomaI2SGcqWtEeWJNffFHsvpNvBA6_E7UHGZRRqMEplWgEhumXbbTx1_mxwqj12w1sAklYQRIK2yXGaTvfhRTc5SpJXgpBylSdhVFsh6sbx12NURm888Xo1cM00w6TEyjGKeVYxS_oH2idnVpw4y-YLoP1zF5HZumA");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            alert("success");
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+</script>
+</body>
+</html>
