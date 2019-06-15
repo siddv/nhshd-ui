@@ -1,8 +1,13 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <section>
+        <b-field position="is-centered">
+            <b-input placeholder="Search..." type="search" icon="magnify">
+            </b-input>
+            <p class="control">
+                <button class="button is-info">Search</button>
+            </p>
+        </b-field>
+    </section>
 </template>
 
 <script>
