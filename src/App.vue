@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-start">
-      <a class="navbar-item" href="https://bulma.io">
+      <a class="navbar-item">
         <img src="./assets/NHS.jpg">
       </a>
         <router-link class="navbar-item" to="/">Home</router-link>
