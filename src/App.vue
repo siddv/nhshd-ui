@@ -1,21 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-start">
+        <router-link class="navbar-item" to="/">Home</router-link>
+        <router-link class="navbar-item" to="/about">About</router-link>
+      </div>
+    </nav>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import "~bulma/sass/utilities/_all";
+
+$primary: #005EB8;
+$primary-invert: findColorInvert($primary);
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
 #nav {
   padding: 30px;
   a {

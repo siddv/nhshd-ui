@@ -16,7 +16,7 @@ export default {
     HelloWorld,
   },
   created() {
-    console.log('created', api);
+    console.log('created', api());
   },
 };
 </script>
