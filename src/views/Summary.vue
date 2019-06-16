@@ -166,4 +166,7 @@
     .b-table {
         width: 100%;
     }
+    .title {
+        color: #005EB8
+    }
 </style>
