@@ -9,7 +9,6 @@
         <router-link class="navbar-item" to="/about">About</router-link>
         <router-link class="navbar-item" to="/register">Register</router-link>
         <router-link class="navbar-item" to="/login">Login</router-link>
-        <router-link class="navbar-item" to="/socialcare">SocialCare</router-link>
 
       </div>
     </nav>
@@ -22,6 +21,7 @@
 </template>
 
 <script>
+import api from './services/api'
 export default {
   name: 'App',
   methods: {
@@ -35,6 +35,7 @@ export default {
     }
   },
   mounted() {
+    api();
     document.addEventListener('keypress', (event) => {
       console.log('event', event.keyCode)
       if(event.keyCode == 122) { //'z'
@@ -53,6 +54,14 @@ $primary-invert: findColorInvert($primary);
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+.navbar {
+  background: $primary;
+}
+
+.navbar-item {
+  color: $white;
+}
 
 #nav {
   padding: 30px;

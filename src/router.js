@@ -5,6 +5,8 @@ import About from './views/About.vue';
 import Login from './views/Login.vue';
 import Register from './views/Register.vue';
 import SocialCare from './views/SocialCare.vue';
+import Profile from './views/Profile.vue';
+
 import CORS from 'cors'
 
 Vue.use(Router);
@@ -40,6 +42,11 @@ export default new Router({
       path: '/socialcare',
       name: 'socialcare',
       component: () => import(/* webpackChunkName: "about" */ './views/SocialCare.vue'),
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import(/* webpackChunkName: "about" */ './views/Profile.vue'),
     },
   ],
 });
