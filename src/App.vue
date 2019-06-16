@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import api from './services/api'
 export default {
   name: 'App',
   methods: {
@@ -35,7 +34,6 @@ export default {
     }
   },
   mounted() {
-    api();
     document.addEventListener('keypress', (event) => {
       console.log('event', event.keyCode)
       if(event.keyCode == 122) { //'z'

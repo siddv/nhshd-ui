@@ -114,48 +114,55 @@
     </div>
     <div class='profile-options is-fullwidth'>
       <b-tabs v-model="activeTab">
-            <b-tab-item label="GP Records">
-                Lorem ipsum dolor sit amet.
-            </b-tab-item>
+        <b-tab-item label="GP Records">
+            Lorem ipsum dolor sit amet.
+        </b-tab-item>
 
-            <b-tab-item label="Hospital Records">
-                Lorem <br>
-                ipsum <br>
-                dolor <br>
-                sit <br>
-                amet.
-            </b-tab-item>
+        <b-tab-item label="Hospital Records">
+            Lorem <br>
+            ipsum <br>
+            dolor <br>
+            sit <br>
+            amet.
+        </b-tab-item>
 
-            <b-tab-item label="Mental Health">
-                What light is light, if Silvia be not seen? <br>
-                What joy is joy, if Silvia be not by— <br>
-                Unless it be to think that she is by <br>
-                And feed upon the shadow of perfection? <br>
-                Except I be by Silvia in the night, <br>
-                There is no music in the nightingale.
-            </b-tab-item>
+        <b-tab-item label="Mental Health">
+            What light is light, if Silvia be not seen? <br>
+            What joy is joy, if Silvia be not by— <br>
+            Unless it be to think that she is by <br>
+            And feed upon the shadow of perfection? <br>
+            Except I be by Silvia in the night, <br>
+            There is no music in the nightingale.
+        </b-tab-item>
 
-            <b-tab-item label="Social Care">
-               <social-care/>
-            </b-tab-item>
-        </b-tabs>
- 
+        <b-tab-item label="Social Care">
+            <social-care/>
+        </b-tab-item>
+      </b-tabs>
     </div>
   </div>
 </div>
 </template>
 
 <script>
+import {getGpRecords} from '../services/api'
 import SocialCare from './SocialCare.vue'
     export default {
       components: {
         'social-care': SocialCare,
       },
-        data() {
-            return {
-                activeTab: 0,
-                showBooks: false
-            }
+      data() {
+        return {
+          activeTab: 0,
+          showBooks: false,
+          gpRecords: [],
         }
+      },
+      mounted() {
+        getGpRecords()
+          .then(response => {
+            console.log('res', response)
+          })
+      }
     }
 </script>
