@@ -11,4 +11,8 @@ const api = () => axios({
   .then((response) => { console.log('response', response); })
   .catch((err) => { console.log('response', err); });
 
+export const getGpRecords = () => {
+  return axios.get('https://nhs.hack.cat/.netlify/functions/gp-encounters')
+}
+
 export default api;

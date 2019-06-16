@@ -114,27 +114,29 @@
     </div>
     <div class='profile-options is-fullwidth'>
       <b-tabs v-model="activeTab">
-            <b-tab-item label="GP Records">
-                Lorem ipsum dolor sit amet.
-            </b-tab-item>
+        <b-tab-item label="GP Records">
+          <ul>
+            <b-table :data="gpRecords" :columns="columns"></b-table>
+          </ul>
+        </b-tab-item>
 
-            <b-tab-item label="Hospital Records">
-                Lorem <br>
-                ipsum <br>
-                dolor <br>
-                sit <br>
-                amet.
-            </b-tab-item>
+        <b-tab-item label="Hospital Records">
+            Lorem <br>
+            ipsum <br>
+            dolor <br>
+            sit <br>
+            amet.
+        </b-tab-item>
 
-            <b-tab-item label="Social Care">
-               <social-care/>
-            </b-tab-item>
+        <b-tab-item label="Social Care">
+            <social-care/>
+        </b-tab-item>
 
-            <b-tab-item label="Mental Health">
-              <mental-health/>
-            </b-tab-item>
+        <b-tab-item label="Mental Health">
+          <mental-health/>
+        </b-tab-item>
 
-        </b-tabs>
+      </b-tabs>
  
     </div>
   </div>
@@ -142,6 +144,7 @@
 </template>
 
 <script>
+import {getGpRecords} from '../services/api'
 import SocialCare from './SocialCare.vue'
 import MentalHealth from './MentalHealth.vue'
     export default {
@@ -149,11 +152,36 @@ import MentalHealth from './MentalHealth.vue'
         'social-care': SocialCare,
         'mental-health': MentalHealth,
       },
-        data() {
-            return {
-                activeTab: 0,
-                showBooks: false
+      data() {
+        return {
+          activeTab: 0,
+          showBooks: false,
+          gpRecords: [],
+          columns: [
+            {
+              field: 'Date',
+              label: 'Date',
+            },
+            {
+              field: 'Rubric',
+              label: 'Reason',
+            },
+            {
+              field: 'Notes',
+              label: 'Notes',
+            },
+            {
+              field: 'StaffCode',
+              label: 'Staff Code',
             }
+          ]
         }
+      },
+      mounted() {
+        getGpRecords()
+          .then(response => {
+            this.gpRecords = response.data.EncountersResult
+          })
+      }
     }
 </script>
