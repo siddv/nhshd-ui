@@ -5,6 +5,8 @@ import About from './views/About.vue';
 import Login from './views/Login.vue';
 import Register from './views/Register.vue';
 import SocialCare from './views/SocialCare.vue';
+import MentalHealth from './views/MentalHealth.vue';
+import Summary from './views/Summary.vue';
 import Profile from './views/Profile.vue';
 
 import CORS from 'cors'
@@ -42,6 +44,16 @@ export default new Router({
       path: '/socialcare',
       name: 'socialcare',
       component: () => import(/* webpackChunkName: "about" */ './views/SocialCare.vue'),
+    },
+    {
+      path: '/mentalhealth',
+      name: 'mentalhealth',
+      component: () => import(/* webpackChunkName: "about" */ './views/MentalHealth.vue'),
+    },
+    {
+      path: '/summary',
+      name: 'summary',
+      component: () => import(/* webpackChunkName: "about" */ './views/Summary.vue'),
     },
     {
       path: '/profile',

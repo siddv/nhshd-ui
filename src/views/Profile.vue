@@ -114,6 +114,11 @@
     </div>
     <div class='profile-options is-fullwidth'>
       <b-tabs v-model="activeTab">
+
+        <b-tab-item label="Summary">
+          <summary/>
+        </b-tab-item>
+
         <b-tab-item label="GP Records">
           <ul>
             <b-table :data="gpRecords" :columns="columns"></b-table>
@@ -124,19 +129,16 @@
           <hospital-records/>
         </b-tab-item>
 
-        <b-tab-item label="Mental Health">
-            What light is light, if Silvia be not seen? <br>
-            What joy is joy, if Silvia be not by— <br>
-            Unless it be to think that she is by <br>
-            And feed upon the shadow of perfection? <br>
-            Except I be by Silvia in the night, <br>
-            There is no music in the nightingale.
-        </b-tab-item>
-
         <b-tab-item label="Social Care">
             <social-care/>
         </b-tab-item>
+
+        <b-tab-item label="Mental Health">
+          <mental-health/>
+        </b-tab-item>
+
       </b-tabs>
+ 
     </div>
   </div>
 </div>
@@ -145,10 +147,13 @@
 <script>
 import {getGpRecords} from '../services/api'
 import SocialCare from './SocialCare.vue'
-import HospitalRecords from '../components/HospitalRecords.vue'
+import MentalHealth from './MentalHealth.vue'
+import Summary from './Summary.vue'
     export default {
       components: {
         'social-care': SocialCare,
+        'mental-health': MentalHealth,
+        'summary':  Summary,
         'hospital-records': HospitalRecords,
       },
       data() {
