@@ -136,8 +136,16 @@
           <mental-health/>
         </b-tab-item>
 
+        <b-tab-item label="Allergies">
+          <allergies/>
+        </b-tab-item>
+
+        <b-tab-item label="Medications">
+          <medications/>
+        </b-tab-item>
+
       </b-tabs>
- 
+
     </div>
   </div>
 </div>
@@ -147,10 +155,14 @@
 import {getGpRecords} from '../services/api'
 import SocialCare from './SocialCare.vue'
 import MentalHealth from './MentalHealth.vue'
+import Allergies from './allergies.vue'
+import Medications from './medications.vue'
     export default {
       components: {
         'social-care': SocialCare,
         'mental-health': MentalHealth,
+        'allergies': Allergies,
+        'medications': Medications,
       },
       data() {
         return {
