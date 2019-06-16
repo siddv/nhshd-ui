@@ -19,10 +19,9 @@
       "PostCode": "BS23 4AE",
       "EmailAddress": null,
       "TelephoneNumber": "0114 345 6787",
-      "MobileNumber": null,
       "RelationshipFlag": "Next Of Kin",
       "TenancyDescription": "Child Services (Cheshire) /Liquid Logic"
-    }, 
+    },
     {
       "GivenName": "Julie",
       "FamilyName": "Jones",
@@ -39,7 +38,7 @@
       "RelationshipFlag": "Dependent",
       "TenancyDescription": "Child Services (Cheshire) /Liquid Logic"
     }
-    
+
     ],
                 columns: [
                     {
