@@ -114,6 +114,11 @@
     </div>
     <div class='profile-options is-fullwidth'>
       <b-tabs v-model="activeTab">
+
+        <b-tab-item label="Summary">
+          <summary-sum/>
+        </b-tab-item>
+
         <b-tab-item label="GP Records">
           <ul>
             <b-table :data="gpRecords" :columns="columns"></b-table>
@@ -121,11 +126,7 @@
         </b-tab-item>
 
         <b-tab-item label="Hospital Records">
-            Lorem <br>
-            ipsum <br>
-            dolor <br>
-            sit <br>
-            amet.
+          <hospital-records/>
         </b-tab-item>
 
         <b-tab-item label="Social Care">
@@ -157,12 +158,17 @@ import SocialCare from './SocialCare.vue'
 import MentalHealth from './MentalHealth.vue'
 import Allergies from './allergies.vue'
 import Medications from './medications.vue'
+import HospitalRecords from '../components/HospitalRecords.vue'
+
+import Summary from './Summary.vue'
     export default {
       components: {
         'social-care': SocialCare,
         'mental-health': MentalHealth,
         'allergies': Allergies,
         'medications': Medications,
+        'summary-sum':  Summary,
+        'hospital-records': HospitalRecords,
       },
       data() {
         return {
