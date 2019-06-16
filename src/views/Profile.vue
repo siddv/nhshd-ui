@@ -116,7 +116,7 @@
       <b-tabs v-model="activeTab">
 
         <b-tab-item label="Summary">
-          <summary/>
+          <summary-sum/>
         </b-tab-item>
 
         <b-tab-item label="GP Records">
@@ -157,7 +157,7 @@ import Summary from './Summary.vue'
       components: {
         'social-care': SocialCare,
         'mental-health': MentalHealth,
-        'summary':  Summary,
+        'summary-sum': Summary
       },
       data() {
         return {
