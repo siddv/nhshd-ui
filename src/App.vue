@@ -13,9 +13,37 @@
 
       </div>
     </nav>
-    <router-view/>
+    <div class="section">
+      <div class="container">
+        <router-view/>
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  methods: {
+    openNotification() {
+      this.$toast.open({
+        duration: 5000,
+        message: `New message from Dr Physio`,
+        position: 'is-bottom',
+        type: 'is-success'
+      })
+    }
+  },
+  mounted() {
+    document.addEventListener('keypress', (event) => {
+      console.log('event', event.keyCode)
+      if(event.keyCode == 122) { //'z'
+        this.openNotification();
+      }
+    })
+  }
+};
+</script>
 
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
