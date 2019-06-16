@@ -126,11 +126,7 @@
         </b-tab-item>
 
         <b-tab-item label="Hospital Records">
-            Lorem <br>
-            ipsum <br>
-            dolor <br>
-            sit <br>
-            amet.
+          <hospital-records/>
         </b-tab-item>
 
         <b-tab-item label="Social Care">
@@ -152,12 +148,15 @@
 import {getGpRecords} from '../services/api'
 import SocialCare from './SocialCare.vue'
 import MentalHealth from './MentalHealth.vue'
+import HospitalRecords from '../components/HospitalRecords.vue'
+
 import Summary from './Summary.vue'
     export default {
       components: {
         'social-care': SocialCare,
         'mental-health': MentalHealth,
-        'summary-sum': Summary
+        'summary-sum':  Summary,
+        'hospital-records': HospitalRecords,
       },
       data() {
         return {
