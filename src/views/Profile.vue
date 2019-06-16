@@ -115,7 +115,9 @@
     <div class='profile-options is-fullwidth'>
       <b-tabs v-model="activeTab">
         <b-tab-item label="GP Records">
-            Lorem ipsum dolor sit amet.
+          <ul>
+            <b-table :data="gpRecords" :columns="columns"></b-table>
+          </ul>
         </b-tab-item>
 
         <b-tab-item label="Hospital Records">
@@ -156,12 +158,30 @@ import SocialCare from './SocialCare.vue'
           activeTab: 0,
           showBooks: false,
           gpRecords: [],
+          columns: [
+            {
+              field: 'Date',
+              label: 'Date',
+            },
+            {
+              field: 'Rubric',
+              label: 'Reason',
+            },
+            {
+              field: 'Notes',
+              label: 'Notes',
+            },
+            {
+              field: 'StaffCode',
+              label: 'Staff Code',
+            }
+          ]
         }
       },
       mounted() {
         getGpRecords()
           .then(response => {
-            console.log('res', response)
+            this.gpRecords = response.data.EncountersResult
           })
       }
     }
