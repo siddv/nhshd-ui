@@ -1,5 +1,14 @@
 <template>
-    <b-table :data="data" :columns="columns"></b-table>
+    <!--<b-table :data="data" :columns="columns"></b-table>-->
+    <b-message title="Access not permitted" type="is-danger" aria-close-label="Close message">
+        <p>The patient has not consented to give your practice access to this information.</p>
+        
+        <p>If you would like to request consent, please click below. The patient will be notified through the app</p>
+        <br>
+        <br>
+        <p><b-button @click="launchDialog" class="is-info">Request Consent</b-button></p>
+    </b-message>
+
 </template>
 
 <script>
@@ -86,6 +95,11 @@
                         label:  'Tenancy',
                     }
                 ]
+            }
+        },
+        methods: {
+            launchDialog() {
+                this.$dialog.alert('Consent for Mr John Smith\'s Social Care information requested')
             }
         }
     }
