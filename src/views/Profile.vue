@@ -95,7 +95,7 @@
             <br>
             <strong>NHS number:</strong> 123 456 7890
             <br>
-            <strong>Primary care contact:</strong> Dr John Smith
+            <strong>Primary care contact:</strong> Dr Jane Smith
           </p>
         </div>
         <div class='column is-2-tablet is-4-mobile has-text-centered'>
