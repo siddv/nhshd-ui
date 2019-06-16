@@ -1,20 +1,22 @@
 <template>
-    <!--<b-table :data="data" :columns="columns"></b-table>-->
-    <b-message title="Access not permitted" type="is-danger" aria-close-label="Close message">
-        <p>The patient has not consented to give your practice access to this information.</p>
-        
-        <p>If you would like to request consent, please click below. The patient will be notified through the app</p>
-        <br>
-        <br>
-        <p><b-button @click="launchDialog" class="is-info">Request Consent</b-button></p>
-    </b-message>
-
+    <div>     
+        <b-table v-if="consented" :data="data" :columns="columns"></b-table>
+        <b-message v-if="!consented" title="Access not permitted" type="is-danger" aria-close-label="Close message">
+            <p>The patient has not consented to give your practice access to this information.</p>
+            
+            <p>If you would like to request consent, please click below. The patient will be notified through the app</p>
+            <br>
+            <br>
+            <p><b-button @click="launchDialog" class="is-info">Request Consent</b-button></p>
+        </b-message>
+    </div>
 </template>
 
 <script>
     export default {
         data() {
             return {
+                consented: false,
                 data: [
     {
       "GivenName": "Vera",
@@ -99,7 +101,10 @@
         },
         methods: {
             launchDialog() {
-                this.$dialog.alert('Consent for Mr John Smith\'s Social Care information requested')
+                this.$dialog.confirm({
+                    message: 'Please wait while John Smith approves.',
+                    onConfirm: () => this.consented = !this.consented,
+                })
             }
         }
     }
