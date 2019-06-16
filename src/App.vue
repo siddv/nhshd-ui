@@ -9,7 +9,10 @@
         <router-link class="navbar-item" to="/about">About</router-link>
         <router-link class="navbar-item" to="/register">Register</router-link>
         <router-link class="navbar-item" to="/login">Login</router-link>
+<<<<<<< HEAD
         <router-link class="navbar-item" to="/socialcare">Social Care</router-link>
+=======
+>>>>>>> b3436101265233ac4b458940d33bcce99564713f
 
       </div>
     </nav>
@@ -53,6 +56,14 @@ $primary-invert: findColorInvert($primary);
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+.navbar {
+  background: $primary;
+}
+
+.navbar-item {
+  color: $white;
+}
 
 #nav {
   padding: 30px;
