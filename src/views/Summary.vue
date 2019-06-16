@@ -1,14 +1,27 @@
 
 
 <template>
-<div>
-    <b-table :data="data" :columns="columns"></b-table>
-    <b-table :data="data2" :columns="columns2"></b-table>
-    <b-table :data="data3" :columns="columns3"></b-table>
-    <b-table :data="data4" :columns="columns4"></b-table>
-
-
-
+<div class="tile is-ancestor">
+  <div class="tile is-6 is-vertical is-parent">
+    <div class="tile is-child box is-primary">
+        <h2 class="title">GP Records</h2>
+        <b-table :data="data" :columns="columns"></b-table>
+    </div>
+    <div class="tile is-child box">
+        <h2 class="title">Hospital Records</h2>
+        <b-table :data="data2" :columns="columns2"></b-table>
+    </div>
+  </div>
+  <div class="tile is-6 is-vertical is-parent">
+    <div class="tile is-child box">
+        <h2 class="title">Medication</h2>
+        <b-table :data="data3" :columns="columns3"></b-table>
+    </div>
+    <div class="tile is-child box">
+        <h2 class="title">Allergies</h2>
+        <b-table :data="data4" :columns="columns4"></b-table>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -45,7 +58,7 @@
                 ],
                 data3:  [
                     {
-                        "Date": "2005-07-08",
+                        "Date": "08 January 2016",
                         "Rubric": "INDIVINA tabs 1mg + 2.5mg",
                         "ReadCode": "fh1V.",
                         "Quantity": "84",
@@ -54,7 +67,7 @@
                         "TenancyDescription": "Orglinks"
                     },
                     {
-                        "Date": "2005-05-23",
+                        "Date": "23 June 2016",
                         "Rubric": "CLINDAMYCIN caps 150mg",
                         "ReadCode": "ea1w.",
                         "Quantity": "4",
@@ -63,7 +76,7 @@
                         "TenancyDescription": "Orglinks"
                     },
                     {
-                        "Date": "2005-03-21",
+                        "Date": "21 August 2016",
                         "Rubric": "KLIOVANCE tabs 1mg + 0.5mg",
                         "ReadCode": "fh1S.",
                         "Quantity": "84",
@@ -107,10 +120,6 @@
                         field: 'Notes',
                         label: 'Notes',
                     },
-                    {
-                        field: 'ReadCode',
-                        label: 'Read Code',
-                    }  
                 ],
                 columns2: [
                     {
@@ -125,10 +134,6 @@
                         field: 'Outcome',
                         label: 'Outcome',
                     },
-                    {
-                        field: 'Recovery plan',
-                        label: 'Recovery plan',
-                    }  
                 ],
 
                 columns3:  [
@@ -140,32 +145,12 @@
                         field: 'Rubric',
                         label: 'Medication prescribed',
                     },
-                    {
-                        field: 'Quantity',
-                        label: 'Quantity',
-                    },
-                    {
-                        field: 'Dosage',
-                        label: 'Dosage',
-                    },
-                    {
-                        field: 'Units',
-                        label: 'Units',
-                    }
                 ],
 
                 columns4:   [
                     {
-                        field: 'Category',
+                        field: 'SubType',
                         label: 'Allergy',
-                    },
-                    {
-                        field:  'AlertType',
-                        label:  'AlertType',
-                    },
-                    {
-                        field:  'SubType',
-                        label:  'Type',
                     },
                     {
                         field:  'Severity',
@@ -176,3 +161,9 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .b-table {
+        width: 100%;
+    }
+</style>
