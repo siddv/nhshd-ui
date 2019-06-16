@@ -148,6 +148,8 @@
 import {getGpRecords} from '../services/api'
 import SocialCare from './SocialCare.vue'
 import MentalHealth from './MentalHealth.vue'
+import HospitalRecords from '../components/HospitalRecords.vue'
+
 import Summary from './Summary.vue'
     export default {
       components: {
