@@ -114,6 +114,11 @@
     </div>
     <div class='profile-options is-fullwidth'>
       <b-tabs v-model="activeTab">
+
+        <b-tab-item label="Summary">
+          <summary/>
+        </b-tab-item>
+
         <b-tab-item label="GP Records">
           <ul>
             <b-table :data="gpRecords" :columns="columns"></b-table>
@@ -147,10 +152,12 @@
 import {getGpRecords} from '../services/api'
 import SocialCare from './SocialCare.vue'
 import MentalHealth from './MentalHealth.vue'
+import Summary from './Summary.vue'
     export default {
       components: {
         'social-care': SocialCare,
         'mental-health': MentalHealth,
+        'summary':  Summary,
       },
       data() {
         return {
